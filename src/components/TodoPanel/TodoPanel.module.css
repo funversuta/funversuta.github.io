@@ -1,0 +1,61 @@
+.todo_panel_container {
+  background-color: white;
+  box-shadow: 0px 8px 11px -8px rgba(34, 60, 80, 0.09);
+  width: 100%;
+  padding: 25px 20px;
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(193, 217, 235, 0.5);
+}
+
+.fields_container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.field_container {
+  width: 100%;
+  position: relative;
+}
+
+.field_container img{
+  transform: rotate(0.25turn);
+  opacity: 0.5;
+}
+
+.field_container label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 15px;
+}
+
+.field_container input {
+  font-size: 15px;
+  padding: 10px 5px;
+  border-radius: 2px;
+  border: none;
+  width: 100%;
+
+}
+
+.field_container_arrow {
+  transform: rotate(0turn) !important;
+}
+
+.field_container input:focus-visible {
+  img{
+    transform: rotate(0turn);
+  }
+
+}
+
+.button_container {
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  left: auto;
+  right: 5px;
+  background: none;
+  padding: 0;
+}
