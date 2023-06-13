@@ -28,6 +28,11 @@
   background-color: white;
   border: none;
   cursor: pointer;
+  transition: 0.3s color ease-in-out;
+}
+
+.footer_button_container:hover {
+  color: red;
 }
 
 .footer_middle_section {

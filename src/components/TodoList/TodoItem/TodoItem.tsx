@@ -5,7 +5,7 @@ import { Tab } from '../../../enums/tab.enum';
 interface TodoItemProps {
   todo: Todo;
   checkTodo: (id: Todo['id']) => void;
-  activeTab: string;
+  activeTab: Tab;
 }
 
 export const TodoItem: React.FC<TodoItemProps> = ({ todo, activeTab, checkTodo }) => {
@@ -29,7 +29,6 @@ export const TodoItem: React.FC<TodoItemProps> = ({ todo, activeTab, checkTodo }
           id={`${todo.id}`}
           checked={todo.checked ?? false}
           onChange={() => checkTodo(todo.id)}
-          onClick={() => checkTodo(todo.id)}
         />
         <span>
           <div style={{ opacity: todo.checked ? 0.8 : 1 }}>

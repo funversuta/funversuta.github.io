@@ -13,10 +13,13 @@ type TodoPanelProps = AddTodoPanelProps;
 
 export const TodoPanel: React.FC<TodoPanelProps> = (props) => {
   const [todo, setTodo] = React.useState(DEFAULT_TODO);
+  const emptyCheck = todo.name !== ' ';
 
   const onClick = () => {
-    props.addTodo(todo);
-    setTodo(DEFAULT_TODO);
+    if (emptyCheck) {
+      props.addTodo(todo);
+      setTodo(DEFAULT_TODO);
+    }
   };
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,18 +48,21 @@ export const TodoPanel: React.FC<TodoPanelProps> = (props) => {
               name='name'
               placeholder='What needs to be done?'
               data-testid='value-test'
-              onKeyDown={(ev) => ev.key === 'Enter' && onClick()}
+              onKeyDown={(ev) => ev.key === 'Enter' && emptyCheck && onClick()}
             />
-            <div className={styles.button_container}>
-              <Button
-                style={todo.name === '' ? { visibility: 'hidden' } : { visibility: 'visible' }}
-                color='blue'
-                onClick={onClick}
-                data-testid='submit'
-              >
-                ADD
-              </Button>
-            </div>
+            <Button
+              className={styles.button_container}
+              style={
+                todo.name === '' || todo.name === ' '
+                  ? { visibility: 'hidden' }
+                  : { visibility: 'visible' }
+              }
+              color='blue'
+              onClick={onClick}
+              data-testid='submit'
+            >
+              ADD
+            </Button>
           </label>
         </div>
       </div>
