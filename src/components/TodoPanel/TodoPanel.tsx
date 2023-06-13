@@ -44,6 +44,7 @@ export const TodoPanel: React.FC<TodoPanelProps> = (props) => {
               onChange={onChange}
               name='name'
               placeholder='What needs to be done?'
+              data-testid='value-test'
               onKeyDown={(ev) => ev.key === 'Enter' && onClick()}
             />
             <div className={styles.button_container}>
@@ -51,6 +52,7 @@ export const TodoPanel: React.FC<TodoPanelProps> = (props) => {
                 style={todo.name === '' ? { visibility: 'hidden' } : { visibility: 'visible' }}
                 color='blue'
                 onClick={onClick}
+                data-testid='submit'
               >
                 ADD
               </Button>
