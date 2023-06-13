@@ -1,4 +1,5 @@
 {
+  "homepage": "https://funversuta.github.io/",
   "name": "react-todo-list",
   "version": "0.1.0",
   "private": true,
@@ -6,7 +7,10 @@
     "start": "react-scripts start",
     "lint": "eslint */**.{tsx,ts}",
     "lint:fix": "eslint */**.{tsx,ts} --fix",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^18.1.0",
@@ -50,6 +54,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.6.1",
     "typescript": "^4.4.2"
   }
